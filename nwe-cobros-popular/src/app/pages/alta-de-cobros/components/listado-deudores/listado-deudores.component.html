@@ -1,0 +1,33 @@
+<div [formGroup]="parent">
+    <div formArrayName="deudores" *ngIf="deudores.length">
+        <table class="table" cellspacing=0>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Deudor</th>
+                    <th>Cuenta de cargo</th>
+                    <th>Concepto</th>
+                    <th>Importe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let deudor of deudores; let i=index;" [formGroupName]="i">
+                    <td><input type="radio" [checked]="indice===i" (click)="selectDeudor(i)"></td>
+                    <td>{{deudor.nombre}}</td>
+                    <td>{{deudor.contrato_iban}}</td>
+                    <td>{{deudor.concepto}}</td>
+                    <td>{{deudor.importe}} EUR</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td>IMPORTE TOTAL</td>
+                    <td>{{importeTotal}} Euros</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

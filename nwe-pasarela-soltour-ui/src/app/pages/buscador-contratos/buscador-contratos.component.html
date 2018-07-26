@@ -1,0 +1,24 @@
+<pst-header [subtitle]="subtitle"></pst-header>
+
+<table class="table" cellspacing=0 *ngIf="contratos$ | async as contratos">
+  <thead>
+      <tr>
+        <th></th>
+        <th>Contrato</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let contrato of contratos; let i=index;">
+        <td>
+          <input type="radio" id="{{i}}" [checked]="contrato===selectedContrato" (change)="selectedContrato=contrato">
+          <label for="{{i}}"><span></span></label>
+        </td>
+        <td>{{contrato.contrato.numContrato}}</td>
+      </tr>
+  </tbody>
+</table>
+
+<footer>
+  <button type="button" class="nwe-btn nwe-btn-grey left" (click)="cancelar()">Cancelar</button>
+  <button type="button" class="nwe-btn nwe-btn-red right" [class.disabled]="!selectedContrato" (click)="continuar()">Continuar</button>
+</footer>

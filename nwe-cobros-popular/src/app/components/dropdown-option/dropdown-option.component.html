@@ -1,0 +1,8 @@
+<button class="button-options-close" [class.button-options-open]="open" #btn (click)="selectedRow($event, op);"></button>
+<p-overlayPanel #op>
+  <ul style="list-style-type:none">
+      <li *ngFor="let action of config" (click)="executeAction($event, action, op)"  [ngClass]="action.disabled ? 'disabled' : ''" style="cursor: pointer">
+          {{ action.name }}
+      </li>
+  </ul>
+</p-overlayPanel>

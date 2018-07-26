@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="53px" height="19px" viewBox="0 0 53 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Flecha_new</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="13" height="13"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Flecha_new">
+            <text id="Volver" font-family="OpenSans, Open Sans" font-size="12" font-weight="normal" fill="#EC0000">
+                <tspan x="17" y="14">Volver</tspan>
+            </text>
+            <g id="Group" transform="translate(0.000000, 6.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g mask="url(#mask-2)" id="Shape" fill-rule="nonzero" fill="#EC0000">
+                    <g transform="translate(1.040000, 0.000000)">
+                        <path d="M2.03215189e-15,4.68107761 C0.0142999976,4.78161864 0.0581437903,4.94688366 0.125124979,5.02520766 L3.55712441,9.15476825 C3.76129977,9.40047711 4.12752271,9.42098726 4.36149927,9.24080077 C4.59547583,9.06061427 4.63806123,8.69176192 4.45087426,8.46650815 L1.76067291,5.23168569 L16.5880001,5.23168569 C16.9039156,5.23168569 17.16,4.98517845 17.16,4.68107761 C17.16,4.37697676 16.9039156,4.13046953 16.5880001,4.13046953 L1.76067291,4.13046953 L4.45087426,0.895644306 C4.63806123,0.670418071 4.58529424,0.313156019 4.36149927,0.121351694 C4.12752271,-0.0791522379 3.74431138,-0.0178420282 3.55712441,0.207384207 L0.125124979,4.33694756 C0.0282853953,4.45103355 0.00775059871,4.53588226 2.03215189e-15,4.68107761 Z"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

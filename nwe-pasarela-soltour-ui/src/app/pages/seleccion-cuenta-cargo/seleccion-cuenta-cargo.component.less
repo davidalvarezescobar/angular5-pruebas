@@ -1,0 +1,61 @@
+:host {
+    display: block;
+}
+.ui-g {
+    padding: 4px 14px;
+    h4 {
+        margin: 4px 0px;
+    }
+}
+.buscador {
+    display: flex;
+    margin-left: 4px;
+    margin-right: 4px;
+    & > div {
+        flex: 1;
+        margin-right: 24px;
+    }
+    & a {
+        font-size: 20px;
+    }
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+::ng-deep{
+    p-dropdown {
+        > div {
+            box-shadow: unset !important;
+
+            div.ui-dropdown-trigger {
+                width: 2.4em !important;
+                padding: 0em !important;
+                border-left: 0px !important;
+                display: flex !important;
+                align-items: center !important;
+                > span {
+                    margin-top: 0em !important;
+                    margin-left: 0em !important;
+                    font-size: 25px !important;
+                    color: #ec0000;
+                }
+            }
+            div.ui-dropdown-panel {
+                top: 28px !important;
+            }
+        }
+    }
+    .fa-caret-down:before{
+        content: "\F107" !important;
+    }
+    .ui-dropdown-open .fa-caret-down:before{
+        content: "\F106" !important;
+    }
+    .ui-state-highlight{
+        background-color: #eeeeee;
+        color: #777777;
+    }
+}

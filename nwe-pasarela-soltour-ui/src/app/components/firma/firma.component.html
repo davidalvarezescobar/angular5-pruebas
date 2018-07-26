@@ -1,0 +1,33 @@
+<div class="componente-firma-component">
+  <form name="formSecuritySign" class="sign-width" novalidate>
+    <div>
+      <p>Introduce las posiciones {{ positions }} de tu firma electónica para completar la operación.</p>
+      <div *ngFor="let chr of signaturePositionsArray; let i = index">
+        <div class="left">
+          <div>
+            <div *ngIf="chr === 'X'">
+              <input value="nope" style="display:none" type="password" aria-hidden="true" aria-label="Identification code"/>
+              <input [(ngModel)]="keyNormal[i + 1]" [ngModelOptions]="{standalone: true}" (ngModelChange)="onChangePosition(keyNormal[i + 1], i + 1)"
+              maxlength="1" required class="sm inputElement" type="password"/>
+
+            </div>
+            <div *ngIf="chr === 'B'" class="red-asterisk">
+              <span>*</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="clearfix">
+    <div>
+      <button class="nwe-btn nwe-btn-grey" (click)="cancel()">
+            Cancelar
+      </button>
+      <button class="nwe-btn" [ngClass]="{'nwe-btn-red-disabled':!firmaCorrecta ,'nwe-btn-red':firmaCorrecta}" (click)="confirm()" [disabled]="!firmaCorrecta">
+          Firmar
+      </button>
+    </div>
+  </div>
+</div>

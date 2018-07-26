@@ -1,0 +1,26 @@
+<p>
+  home works! 
+  <a routerLink="/profile">Go profile</a>
+  <a routerLink="/operations">Go operations</a>
+</p>
+<p> Componente fa-input
+  <fa-input #faInput *ngFor="let icon of icons"
+    [placeHolder]="pHolder"
+    [icon]="icon"
+    (value)="value=$event">
+  </fa-input>
+</p>
+<div>Value obtenido: {{value}}</div>
+<button (click)="add()">ADD</button>
+
+<p> Componente fa-input mejorado con content projection
+  <fa-input-better [icon]="'envelope'">
+    <input type="email" placeholder="email" inputHandler>
+  </fa-input-better>
+</p>
+
+<p>Prueba de combo:</p>
+<select>
+  <option value="" disabled selected hidden>Choose a Browser</option>
+  <option *ngFor="let icon of icons">{{icon}}</option>
+</select>

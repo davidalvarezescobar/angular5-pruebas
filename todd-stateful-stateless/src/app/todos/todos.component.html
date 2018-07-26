@@ -1,0 +1,8 @@
+    <todo-form
+        (onAdd)="addTodo($event)">
+    </todo-form>
+    <todo-list
+        [todos]="todos"
+        (done)="onDone($event)"
+        (delete)="onDelete($event)">        
+    </todo-list>

@@ -1,0 +1,34 @@
+<nwe-header-title [data]="datosHeader"></nwe-header-title>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="greybox ui-g">
+        <div class="ui-g-12">
+            <h3>Tipo emisión</h3>
+            <a [class.not-active]="!form.get('contrato').value" (click)="buscarReciboEmitido()"><i class="fa fa-recycle"><span>Consultar / Reutilizar emisión</span></i></a>
+        </div>
+        <nwe-datos-emision [parent]="form" (busqueda)="buscarContrato()"></nwe-datos-emision>
+    </div>
+    <h3>Deudores</h3>
+    <p>Listado de deudores</p>
+    <div>
+        <a (click)="addDeudor()"><i class="fa fa-plus-circle"><span>Nuevo</span></i></a>
+        <span>|</span>
+        <a [class.not-active]="selectedDeudorIndex < 0" (click)="editDeudor(selectedDeudorIndex)"><i class="fa fa-pencil"><span>Editar</span></i></a>
+        <span>|</span>
+        <a [class.not-active]="selectedDeudorIndex < 0" (click)="removeDeudor(selectedDeudorIndex)"><i class="fa fa-times-circle"><span>Eliminar</span></i></a>
+    </div>
+    <nwe-listado-deudores [parent]="form" [deudores]="deudores" (selected)="selectedDeudorIndex=$event" (suma)="getTotal($event)"></nwe-listado-deudores>
+    <p>Campos Obligatorios<span class="obligatorio">*</span></p>
+    <div class="footer">
+        <button type="button" (click)="openModal()" class="nwe-btn nwe-btn-grey left">Cancelar</button>
+        <button type="submit" class="nwe-btn nwe-btn-red right">Continuar</button>
+    </div>
+    <!-- <pre>{{form.value | json}}</pre> -->
+</form>
+
+<!-- The Modal -->
+<div #myModal class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <nwe-cancelar-operacion (cancelar)="cancelarOperacion()" (guardar)="guardarOperacion()"></nwe-cancelar-operacion>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>To do:</label>
+  <input type="text" formControlName="tarea">
+  <small *ngIf="form.get('tarea').hasError('required') && form['formSubmitAttempt']">
+    Campo obligatorio
+  </small>
+  <p>
+    <button type="submit">Add tarea</button>
+  </p>
+</form>

@@ -1,0 +1,9 @@
+<h2>Formulario</h2>
+<p>TOPPINGS:</p>
+<span *ngFor="let topping of toppings" 
+  [class.active]="isActive(topping)"
+  (click)="onUpdateToppings.emit(topping)" >[ {{topping}} ]
+</span>
+<div *ngIf="selectedToppings.length">
+  <p *ngFor="let topping of selectedToppings">{{topping}}</p>
+</div>

@@ -1,0 +1,6 @@
+<form (ngSubmit)="submit()">
+    <!-- <input name="label" [(ngModel)]="label"> -->
+    <input type="text" [value]="label" (change)="label=$event.target.value">
+    <!-- las 2 líneas anteriores son equivalentes -->
+    <button type="submit">Add todo</button>
+</form>

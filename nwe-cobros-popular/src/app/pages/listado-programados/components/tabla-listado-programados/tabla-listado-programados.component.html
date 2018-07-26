@@ -1,0 +1,36 @@
+<table class="tabla-listado-programados table">
+  <thead>
+    <tr>
+      <th>FECHA PRÓXIMA EJECUCIÓN</th>
+      <th>REFERENCIA</th>
+      <th>CONCEPTO</th>
+      <th>IMPORTE</th>
+      <th>PERIODICIDAD</th>
+      <th>ESTADO</th>
+      <th>ACCIONES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data?.programedCharges">
+      <td>{{ item.nextExecutionDate }}</td>
+      <td>{{ item.reference }} </td>
+      <td>{{ item.concept }}</td>
+      <td>{{ item.totalAmount | formatCurrencyEuro }}{{' ' + item.currency}}</td>
+      <td> </td>
+      <td>{{ item.status }}</td>
+      <td>
+        <nwe-dropdown-option class="center" [config]="item.options" (optionClicked)="clickedOption($event)"></nwe-dropdown-option>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="paginator">
+  <a>
+    <span class="fa fa-chevron-left"></span>
+    ANTERIOR
+  </a>
+  <a class="disabled">
+    SIGUIENTE
+    <span class="fa fa-chevron-right"></span>
+  </a>
+</div>

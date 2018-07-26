@@ -1,0 +1,32 @@
+<table class="tabla-listado-de-cobros table">
+  <thead>
+    <tr>
+      <th>FECHA EMISIÓN</th>
+      <th>REFERENCIA</th>
+      <th>CONCEPTO</th>
+      <th>IMPORTE</th>
+      <th>ACCIONES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data?.emisionList">
+      <td>{{ item.emissionDate }}</td>
+      <td>{{ item.reference }}</td>
+      <td>{{ item.concept }}</td>
+      <td>{{ item.amount | formatCurrencyEuro }}{{ ' ' + item.currency }}</td>
+      <td>
+        <nwe-dropdown-option class="center" [config]="configDropdown.options" (optionClicked)="clickedOption($event)"></nwe-dropdown-option>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="paginator">
+  <a>
+    <span class="fa fa-chevron-left"></span>
+    ANTERIOR
+  </a>
+  <a class="disabled">
+    SIGUIENTE
+    <span class="fa fa-chevron-right"></span>
+  </a>
+</div>

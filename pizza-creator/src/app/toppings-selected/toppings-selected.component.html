@@ -1,0 +1,11 @@
+<div [formGroup]="parent">
+  <div formArrayName="toppings">
+    <p *ngFor="let topping of selected; let i=index;" [formGroupName]="i">
+      <span>{{topping}}</span>
+      <span (click)="remove.emit(i)">X</span>
+    </p>
+    <p class="error"
+      *ngIf="parent.get('toppings').hasError('required') && parent['formSubmitAttempt']">Añadir toppings
+    </p>
+  </div>
+</div>

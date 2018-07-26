@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let todo of todos">
+        <todo
+            [todo]="todo"
+            (done)="onDone($event)"
+            (delete)="onDelete($event)"></todo>
+    </li>
+</ul>

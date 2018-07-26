@@ -1,0 +1,9 @@
+<h1>Pizza Creator</h1>
+<div>
+  <app-pizza-form 
+    [toppings]="toppings$ | async"
+    [selectedToppings]="selectedToppings$ | async"
+    (onUpdateToppings)="appSrv.updateToppings($event)" >
+  </app-pizza-form>
+  <app-pizza-list [pizzas]="pizzas$ | async"></app-pizza-list>
+</div>

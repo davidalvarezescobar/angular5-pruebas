@@ -1,0 +1,26 @@
+<nwe-header-title [data]="configHeader"></nwe-header-title>
+<table class="table"  cellspacing=0>
+    <thead>
+        <tr>
+          <th></th>
+          <th>Contrato</th>
+          <th>Cuenta de abono</th>
+          <th>Identificador</th>
+          <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contrato of (contratos$ | async)" [ngClass]="{'row-selected': contrato === selectedContrato}">
+          <th><input type="radio" [checked]="contrato===selectedContrato" (change)="select(contrato)"></th>
+          <td>{{contrato.contrato}}</td>
+          <td>{{contrato.cuentaVinculada}}</td>
+          <td>{{contrato.identificador}}</td>
+          <td>{{contrato.descripcion}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<button type="button" class="nwe-btn nwe-btn-grey left" *ngIf="routeHistory" (click)="cancelar()">Cancelar</button>
+<button type="button" class="nwe-btn nwe-btn-red right" *ngIf="routeHistory" (click)="continuar()" [ngClass]="disabledButton ? 'disabled' : ''">Continuar</button>
+<button type="button" class="nwe-btn nwe-btn-red right" *ngIf="!routeHistory" (click)="consultar()" [ngClass]="disabledButton ? 'disabled' : ''">Consultar</button>

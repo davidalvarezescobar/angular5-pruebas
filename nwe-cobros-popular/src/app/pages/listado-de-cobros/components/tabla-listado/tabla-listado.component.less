@@ -1,0 +1,49 @@
+@import "./../../../../../assets/variables.less";
+.table {
+  margin-bottom: 0px !important;
+  border-bottom: none;
+  td, th {
+    width: 17% !important;
+  }
+  th:first-child, td:first-child {
+    width: 25px;
+  }
+}
+.tabla-listado-de-cobros {
+
+  width: 100%;
+
+  a {
+    text-decoration: underline;
+  }
+  thead {
+    width: 100%;
+    background: @shadow-gray;
+    color: @white;
+  }
+  thead > tr > th, tbody > tr > td {
+    padding: 10px;
+  }
+
+  thead > tr > th:first-child, tbody > tr > td:first-child {
+    width: 20% !important;
+  }
+  thead > tr > th:nth-child(3), tbody > tr > td:nth-child(3) {
+    width: 30% !important;
+  }
+
+  thead > tr > th:last-child,   tbody > tr > td:last-child {
+    width: 8% !important;
+  }
+
+}
+
+.paginator {
+  width: 100%;
+  background: @table-pagination-grey;
+  padding: 17px 0px;
+  text-align: center;
+  a {
+    padding: 0px 10px;
+  }
+}

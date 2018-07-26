@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="38px" viewBox="0 0 39 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>mensaje_ok</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LIGHTBOX-&quot;SAD-FACE&quot;-DOBLE" transform="translate(-213.000000, -29.000000)">
+            <g id="ALERT" transform="translate(181.000000, 30.000000)">
+                <g id="mensaje_error" transform="translate(33.000000, 0.000000)">
+                    <g id="Page-1">
+                        <path d="M10.5061728,25.7777778 C10.5061728,25.7777778 13.7037037,22.6666667 18.5,22.6666667 C23.2962963,22.6666667 26.4938272,25.7777778 26.4938272,25.7777778" id="Stroke-1" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M18.5,0 C8.28236957,0 0,8.05852174 0,18 C0,27.9414783 8.28236957,36 18.5,36 C28.7176304,36 37,27.9414783 37,18 C37,8.05852174 28.7176304,0 18.5,0 Z" id="Stroke-3" stroke="#EC0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M27.4074074,15.7777778 C27.4074074,17.1279259 26.2816889,18.2222222 24.8946429,18.2222222 C23.5084345,18.2222222 22.382716,17.1279259 22.382716,15.7777778 C22.382716,14.4276296 23.5084345,13.3333333 24.8946429,13.3333333 C26.2816889,13.3333333 27.4074074,14.4276296 27.4074074,15.7777778 L37.6829102,18.794029" id="Fill-5" fill="#EC0000"></path>
+                        <path d="M14.617284,15.7777778 C14.617284,17.1279259 13.4915655,18.2222222 12.1045195,18.2222222 C10.7183111,18.2222222 9.59259259,17.1279259 9.59259259,15.7777778 C9.59259259,14.4276296 10.7183111,13.3333333 12.1045195,13.3333333 C13.4915655,13.3333333 14.617284,14.4276296 14.617284,15.7777778" id="Fill-7" fill="#EC0000"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

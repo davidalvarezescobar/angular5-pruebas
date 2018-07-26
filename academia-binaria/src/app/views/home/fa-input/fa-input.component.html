@@ -1,0 +1,6 @@
+<i [class]="iClass"></i>
+<input type="text" #input 
+    [placeholder]="pHolder"
+    (focus)="inputFocus.emit(true)"
+    (blur)="inputFocus.emit(false)"
+    (keyup)="value.emit(input.value)">

@@ -1,0 +1,31 @@
+<!-- TITLE -->
+<div class="title">
+    <span class="titleTealium">{{'OPERACIONES_BE.COMUN.LANZADERA.TITULO' | translate}}</span>
+</div>
+<!-- INFO -->
+<div class="container-message-info">
+  <span class="icon-info"></span> {{'OPERACIONES_BE.COMUN.LANZADERA.INFORMACION' | translate}}
+</div>
+<div class="info-box">
+  <div class="row ui-g ui-fluid">
+    <div class="ui-g-4">
+      <label class="subtitle">{{'OPERACIONES_BE.COMUN.LANZADERA.ALIAS' | translate}} </label>
+      <p-dropdown [options]="usuarios" [(ngModel)]="selectedUser" StyleClass="ui-g-4"></p-dropdown>
+    </div>
+    <div class="ui-g-4">
+      <label class="subtitle">{{'OPERACIONES_BE.COMUN.LANZADERA.RUTA' | translate}} </label>
+      <p-dropdown [options]="pagina" [(ngModel)]="selectedPagina" panelStyleClass="ui-g-4"></p-dropdown>
+    </div>
+    <div class="ui-g-4">
+      <label class="subtitle">{{'OPERACIONES_BE.COMUN.LANZADERA.IDIOMA' | translate}} </label>
+      <p-dropdown [options]="idioma" (onChange)="cambiaIdioma()" [(ngModel)]="selectedIdioma" panelStyleClass="ui-g-4"></p-dropdown>
+    </div>
+  </div>
+</div>
+
+<div class="clearfix" style="margin-top: 1em">
+  <button type="button" class="nwe-btn nwe-btn-red left" (click)="navegar()">{{'OPERACIONES_BE.COMUN.LANZADERA.CONFIRMAR' | translate}}</button>
+</div>
+<div class="nwe_tealium-class-hidden">
+  {{'OPERACIONES_BE.TEALIUM.NWE_INIT' | translate}}
+</div>

@@ -1,0 +1,67 @@
+<nwe-header-title [data]="datosHeader"></nwe-header-title>
+<div class="greybox ui-g">
+    <div class="ui-g-8">
+        <label>Contrato / Cuenta</label><br>
+        <h4>{{recibo.contrato}} / {{recibo.cuentaVinculada}}</h4>
+    </div>
+    <div class="ui-g-4">
+        <label>Importe total de todos los recibos</label><br>
+        <h4>{{recibo.importeTotal}} Euros</h4>
+    </div>
+    <div class="ui-g-4">
+        <label>Referencia de la emisión</label><br>
+        <h4>{{recibo.referencia}}</h4>
+    </div>
+    <div class="ui-g-4">
+        <label>Fecha de la operación</label><br>
+        <h4>{{today | date: 'dd-MM-yyyy'}}</h4>
+    </div>
+    <div class="ui-g-4">
+        <label>Fecha de adeudo</label><br>
+        <h4>{{recibo.fechaEmision}}</h4>
+    </div>
+    <!-- <div>
+        <label></label>
+        <a routerLink="/alta-de-cobros/datos-recibo"><u><< Modificar datos</u></a>
+    </div> -->
+</div>
+
+<div>
+    <table class="table" cellspacing=0>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Deudor</th>
+                <th>Cuenta de cargo</th>
+                <th>Concepto</th>
+                <th>Importe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let deudor of recibo.deudores">
+                <td></td>
+                <td>{{deudor.nombre}}</td>
+                <td>{{deudor.contrato_iban}}</td>
+                <td>{{deudor.concepto}}</td>
+                <td>{{deudor.importe}} EUR</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    <button class="nwe-btn nwe-btn-grey left" type="button" (click)="openModal()">Cancelar operación</button>
+    <div class="right">
+        <button class="nwe-btn nwe-btn-red" type="button">Firmar luego</button>
+        <button class="nwe-btn nwe-btn-red" type="button" (click)="firmar()">Firmar ahora</button>
+    </div>
+</div>
+
+
+<!-- The Modal -->
+<div #myModal class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <nwe-cancelar-operacion (cancelar)="cancelarOperacion()" (guardar)="guardarOperacion()"></nwe-cancelar-operacion>
+    </div>
+</div>

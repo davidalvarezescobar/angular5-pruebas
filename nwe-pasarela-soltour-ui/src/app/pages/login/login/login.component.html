@@ -1,0 +1,47 @@
+<section id="login">
+  <div class="body-login">
+    <h4> <span class="fa fa-arrow-right"></span> Datos del pago</h4>
+    <div class="ui-g form-login">
+
+      <div class="ui-g-12">
+          <div class="ui-g-4 icon-lock">
+            <img src="assets/images/logo_santander.svg" alt="">
+            <!-- <span class="fa fa-lock fa-5x"></span> -->
+          </div>
+          <div class="ui-g-8">
+            <div class="ui-g-12" style="border-bottom: 1px solid grey;">
+              <div class="ui-g-5" style="text-align: right;">
+                <p>Emisor</p>
+                <p>Email emisor</p>
+                <p>Fecha de emisión</p>
+                <p>Número factura</p>
+                <p>Importe</p>
+              </div>
+              <div class="ui-g-6" style="text-align: left;">
+                <p>Emisor apellido apellido</p>
+                <p>emisor@emisor.com</p>
+                <p>11/05/2018</p>
+                <p>{{loginData.numeroFactura}}</p>
+                <p>{{loginData.importe + ' ' + loginData.moneda}}</p>
+              </div>
+            </div>
+            <div class="ui-g-12">
+              <div class="ui-g-5" style="text-align: right;">
+                <p>Usuario</p>
+                <p>Contraseña</p>
+              </div>
+              <div class="ui-g-6 " style="text-align: left;">
+                <input type="text" name="" value="">
+                <input type="password" name="" value="">
+              </div>
+              <div class="ui-g-12" style="text-align: right;">
+                <button class="nwe-btn nwe-btn-red" type="button" name="button" (click)="login()">Entrar</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+    <!-- <hr class="line-dashed"> -->
+  </div>
+</section>

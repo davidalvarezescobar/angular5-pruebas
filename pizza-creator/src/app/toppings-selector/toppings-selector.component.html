@@ -1,0 +1,9 @@
+<div [formGroup]="parent">
+  <p>TOPPINGS:</p>
+  <span 
+    *ngFor="let topping of toppings"
+    [class.active]="isActive(topping)"
+    (click)="onSelect(topping)">
+    [{{topping}}]
+  </span>
+</div>

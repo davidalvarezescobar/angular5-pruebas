@@ -1,0 +1,42 @@
+
+<pst-header [subtitle]="subtitle"></pst-header>
+
+<div class="ui-g info-box" *ngIf="datosPago$ | async as pago">
+  <div class="ui-g-12">
+    <div class="ui-g-5">
+      <h4>Emisor</h4>
+      <span>{{pago.emisor}}</span>
+    </div>
+    <div class="ui-g-4">
+      <h4>Email emisor</h4>
+      <span>{{pago.emailEmisor}}</span>
+    </div>
+    <div class="ui-g-2">
+      <h4>Número de factura</h4>
+      <span>{{pago.numeroFactura}}</span>
+    </div>
+  </div>
+
+  <div class="ui-g-12">
+    <div class="ui-g-5">
+      <h4>Importe</h4>
+      <span>{{pago.importe}} {{pago.moneda}}</span>
+    </div>
+    <div class="ui-g-4">
+      <h4>Fecha de compra</h4>
+      <span>{{pago.fechaFactura}}</span>
+    </div>
+  </div>
+</div>
+
+<div class="buscador">
+  <div>
+    <p-dropdown #dropdown placeholder="Selecciona una cuenta" [options]="cuentasAsociadas" [style]="{'width':'100%'}" [ngModel]="selectedCuenta?.value" (ngModelChange)="selectedCuenta=dropdown.selectedOption"></p-dropdown>
+  </div>
+  <a (click)="buscarCuentas()"><i class="fa fa-search"></i></a>
+</div>
+
+<footer>
+    <button type="button" class="nwe-btn nwe-btn-grey left" (click)="cancelar()">Cancelar</button>
+    <button type="button" class="nwe-btn nwe-btn-red right" [class.disabled]="!selectedCuenta" (click)="continuar()">Continuar</button>
+</footer>

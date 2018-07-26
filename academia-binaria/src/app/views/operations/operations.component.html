@@ -1,0 +1,9 @@
+<app-new
+    [numberOfOperations]="numberOfOperations"
+    (save)="saveOperation($event)">    
+</app-new>
+<app-list 
+    [numberOfOperations]="numberOfOperations" 
+    [operations]="operations"
+    (delete)="deleteOperation($event)">
+</app-list>

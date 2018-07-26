@@ -1,0 +1,14 @@
+<section id="resultado-firma">
+
+  <pst-header [subtitle]="dataResultado.headerTitle"></pst-header>
+
+  <div class="info-box green">
+    <span class="icon-check"></span>
+    <span style="vertical-align: super;"> <strong> {{dataResultado.resultadoFirma}} </strong> </span>
+  </div>
+
+  <div *ngIf="dataResultado.btnOperaciones">
+    <button type="button" name="button" class="nwe-btn nwe-btn-red" (click)="goToOperaciones()">Ir a operaciones pendientes</button>
+  </div>
+
+</section>

@@ -1,0 +1,21 @@
+<div class="ui-g flex-space-between">
+  <div class="ui-g-8">
+    <a role="button" (click)="getBack()" class="link"> <span class="fa fa-long-arrow-left"></span> Volver </a>
+    <h3> {{ data.title }}</h3>
+  </div>
+  <div class="ui-g-4" style="text-align: right;margin-top:10px;">
+    <a *ngIf="data.iconFdf" class="icon-link" (click)="action('PDF')">
+      <span class="header-icons icon-pdf"> PDF</span>
+    </a>
+    <a *ngIf="data.iconTxt" class="icon-link" (click)="action('TXT')">
+      <span class="header-icons icon-txt"> TXT</span>
+    </a>
+    <a *ngIf="data.iconExcel" class="icon-link" (click)="action('EXCEL')">
+      <span class="header-icons icon-excel"> Excel</span>
+    </a>
+    <a *ngIf="data.iconPrint" class="icon-link" (click)="action('PRINT')">
+      <span class="header-icons icon-print"> Imprimir</span>
+    </a>
+  </div>
+  <div class="ui-g-12" *ngIf="data.subtitle"> {{data.subtitle}} </div>
+</div>

@@ -1,0 +1,61 @@
+<section id="detalle-recibo">
+  <nwe-header-title [data]="configHeader" (actionClick)="actionHeader($event)"></nwe-header-title>
+
+  <div class="ui-g info-box">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <span>Contrato de cesión</span>
+        <br>
+        <span><strong>{{ data?.contrato }}</strong></span>
+      </div>
+      <div class="ui-g-4">
+        <span>Cuenta de abono</span>
+        <br>
+        <span><strong>{{ data?.cuentaVinculada }}</strong></span>
+      </div>
+      <div class="ui-g-4">
+        <span>Importe total de todos los recibos</span>
+        <br>
+        <span><strong>{{ data?.importeTotal }}</strong></span>
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <span>Referencia de la emisión</span>
+        <br>
+        <span><strong>{{ data?.referencia }}</strong></span>
+      </div>
+      <div class="ui-g-4">
+        <span>Fecha de la operación</span>
+        <br>
+        <span><strong>{{ data?.fechaOperacion }}</strong></span>
+      </div>
+      <div class="ui-g-4">
+        <span>Fecha de adeudo</span>
+        <br>
+        <span><strong>{{ data?.fechaEmision }}</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Fecha de emisión</th>
+        <th>Referencia / Deudor</th>
+        <th>Concepto</th>
+        <th>Importe</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let deudor of data?.deudores">
+        <td>{{ deudor.referencia }}</td>
+        <td>{{ deudor.referencia }}</td>
+        <td>{{ deudor.concepto }}</td>
+        <td class="text-right">{{ deudor.importe + ' ' + deudor.moneda }}</td>
+        <td>{{ deudor.estado }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

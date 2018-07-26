@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    height: 20px;
+}
+:host(.outline) {
+    outline: 1px solid blue;
+}
+
+::ng-deep { 
+    input {
+        width: 300px;
+        border: 0px;
+        outline: none;
+    }
+}
+
+i {
+    cursor: pointer;
+    margin: 0px 6px;
+}

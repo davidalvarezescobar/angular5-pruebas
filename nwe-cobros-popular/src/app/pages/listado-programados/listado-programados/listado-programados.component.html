@@ -1,0 +1,36 @@
+<section id="listado-programados">
+
+  <nwe-header-title [data]="configHeader" (actionClick)="actionHeader($event)"></nwe-header-title>
+
+  <nwe-info-box [data]="textBox"></nwe-info-box>
+
+  <div class="ui-g info-box">
+    <div class="ui-g-12">
+      <div class="ui-g-3">
+        <span>Número de contrato</span>
+        <br>
+        <span><strong>{{headerData?.contrato}}</strong></span>
+      </div>
+      <div class="ui-g-3">
+        <span>Identificador</span>
+        <br>
+        <span><strong>{{headerData?.identificador}}</strong></span>
+      </div>
+      <div class="ui-g-3">
+        <span>Cuenta de abono</span>
+        <br>
+        <span><strong>{{headerData?.cuentaVinculada}}</strong></span>
+      </div>
+      <div class="ui-g-3">
+        <span>Descripción</span>
+        <br>
+        <span><strong>{{headerData?.descripcion}}</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <nwe-filtros-listado-programados (filtersClicked)="applyFilters($event)"></nwe-filtros-listado-programados>
+
+  <nwe-tabla-listado-programados [data]="tableData"></nwe-tabla-listado-programados>
+
+</section>

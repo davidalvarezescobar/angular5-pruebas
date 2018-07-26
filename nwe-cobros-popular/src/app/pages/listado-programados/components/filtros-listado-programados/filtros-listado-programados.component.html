@@ -1,0 +1,42 @@
+<div class="info-box">
+  <form class="ui-g" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="ui-g-12">
+      <div class="ui-g-3 inputFormat">
+        <label for="fromDate">Fecha de emisión desde:</label>
+        <!-- <input type="date" formControlName="fromDate" value=""> -->
+        <p-calendar formControlName="fromDate" [showIcon]="true" icon="icon-calendar"></p-calendar>
+      </div>
+      <div class="ui-g-3 inputFormat">
+        <label for="toDate">Hasta:</label>
+        <!-- <input type="date" formControlName="toDate" value=""> -->
+        <p-calendar formControlName="toDate" [showIcon]="true" icon="icon-calendar"></p-calendar>
+      </div>
+      <div class="ui-g-3 inputFormat euro-background" data-placeholder="EUR">
+        <label for="fromAmount">Importe desde:</label>
+        <input type="text" formControlName="fromAmount"
+          (focus)="removeDots(form.value.amountFrom,'F')"
+          (blur)="format(form.value.fromAmount, 'F')"
+          (keypress)="mask($event,form.value.amountFrom, 'F')">
+      </div>
+      <div class="ui-g-3 inputFormat euro-background" data-placeholder="EUR">
+        <label for="toAmount">Hasta:</label>
+        <input type="text" formControlName="toAmount"
+          (focus)="removeDots(form.value.amountTo,'T')"
+          (blur)="format(form.value.toAmount,'T')"
+          (keypress)="mask($event,form.value.amountTo, 'T')">
+      </div>
+    </div>
+    <!-- <div class="ui-g-12 flex-space-around">
+
+    </div> -->
+    <div class="ui-g-12 flex-space-around">
+      <div class="ui-g-4 inputFormat">
+        <label for="reference">Referencía:</label>
+        <input type="text" formControlName="reference" value="">
+      </div>
+      <div class="ui-g-8">
+        <button class="nwe-btn nwe-btn-red right" style="margin-top: 22px;" type="submit">Buscar</button>
+      </div>
+    </div>
+  </form>
+</div>

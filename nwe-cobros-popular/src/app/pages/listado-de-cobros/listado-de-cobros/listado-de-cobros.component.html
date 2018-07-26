@@ -1,0 +1,43 @@
+<section id="listado-de-cobros">
+  <nwe-header-title [data]="configHeader" (actionClick)="actionHeader($event)"></nwe-header-title>
+
+  <div class="ui-g info-box">
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <span>Número de contrato</span>
+        <br>
+        <span><strong>{{ configTable?.contracOfAssignment.id | formatContractAccount }}</strong></span>
+      </div>
+      <div class="ui-g-4">
+        <span>Identificador</span>
+        <br>
+        <span><strong>{{ configTable?.identificator }}</strong></span>
+      </div>
+      <div class="ui-g-4">
+        <span>Descripción</span>
+        <br>
+        <span><strong>{{ configTable?.detailConcept }}</strong></span>
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        <span>Cuenta de abono</span>
+        <br>
+        <span><strong>{{ configTable?.subscriptionAccount.id | formatContractAccount }}</strong></span>
+      </div>
+      <div class="ui-g-4">
+        <span>Referencia</span>
+        <br>
+        <span><strong>{{ configTable?.referenceOfEmission }}</strong></span>
+      </div>
+      <div class="ui-g-4">
+        <span>Periodicidad</span>
+        <br>
+        <span><strong>{{ configTable?.periodiciy }}</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <nwe-tabla-listado [data]="configTable"></nwe-tabla-listado>
+
+</section>

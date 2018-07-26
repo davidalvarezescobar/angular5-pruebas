@@ -1,0 +1,11 @@
+<nav>
+  <a *ngFor="let menu of menus" 
+    (mouseenter)="selectMenu(menu); showSubMenu=true" 
+    [class.active]="menu===menuSelected">
+    {{menu.text}}
+  </a>
+</nav>
+
+<nav *ngIf="showSubMenu">
+  <a *ngFor="let submenu of menuSelected.submenu" (click)="showSubMenu=false" (click)="navigate(submenu.ruta)">{{submenu.text}}</a>
+</nav>

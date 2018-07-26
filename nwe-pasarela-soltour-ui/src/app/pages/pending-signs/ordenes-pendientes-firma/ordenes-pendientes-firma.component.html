@@ -1,0 +1,131 @@
+<a (click)="volver()">
+  <i class="fa fa-long-arrow-left"></i>
+  <span>Volver</span>
+</a>
+<h1>Firmas</h1>
+<h2>Firma / anulación de pagos por Pasarela Soltour</h2>
+<p>Puedes elegir firmar o anular de una vez tantos pagos como selecciones en esta tabla.</p>
+
+<div class="info-box">
+  <div>
+    Filtrar por
+  </div>
+  <i class="fa fa-angle-down" style="font-size:24px"></i>
+</div>
+
+<div class="firmar-todas">
+  <i class="fa fa-check-circle-o"></i><span>Firmar todas</span>
+  <span class="barra">|</span>
+  <i class="fa fa-times-circle"></i><span>Anular todas</span>
+</div>
+
+<div class="table">
+  <div class="sign-order-col">
+    <ul class="contenedor">
+      <li>
+        <p>
+          <input type="checkbox" id="varios" (change)="selected=!selected" [checked]="selected">
+          <label for="varios"><span></span></label>
+        </p>
+      </li>
+
+      <li class="col-left" data-index="0" [class.row-selected]="selected">
+        <p>
+          <input type="checkbox" id="uno" (change)="selected=!selected" [checked]="selected">
+          <label for="uno"><span></span></label>
+        </p>
+      </li>
+
+    </ul>
+  </div>
+  <div class="sign-order-table">
+    <ul class="contenedor">
+      <li class="header">
+        <p>
+          <span>Descripción</span>
+        </p>
+        <p>
+          <span>Importe</span>
+        </p>
+        <p>
+          <span>Titular</span>
+        </p>
+        <p>
+          <span>Cuenta</span>
+        </p>
+        <p>
+          <span>Envío</span>
+        </p>
+        <p>
+          <span>Caducidad</span>
+        </p>
+        <p>
+          <span>Estado de mi firma</span>
+        </p>
+        <p>
+          <span>Estado</span>
+        </p>
+      </li>
+
+      <li class="tableBody" [class.row-selected]="selected">
+        <p>
+          <span>PAGO DE SOLTOUR</span>
+        </p>
+        <p class="right">
+          <span>
+            <strong>110,00 EUR</strong>
+          </span>
+        </p>
+        <p>
+          <span>RAÚL ROMERO CARVAJAL / 00282196D</span>
+        </p>
+        <p>
+          <span>ES36 0049 0001 58 2916247130</span>
+        </p>
+        <p>
+          <span>11/05/2018 - 13:31</span>
+        </p>
+        <p>
+          <span>21/05/2018</span>
+        </p>
+        <p>
+          <span>Ya he firmado</span>
+        </p>
+        <p>
+          <span>Pdte. de firma</span>
+        </p>
+      </li>
+
+    </ul>
+  </div>
+  <div class="sign-order-col">
+    <ul class="contenedor">
+      <li>
+        <p></p>
+      </li>
+
+      <li class="col-right" [class.row-selected]="selected">
+        <p>
+          <i class="fa fa-angle-down" (click)="panel.toggle($event)" style="font-size:18px"></i>
+          <p-overlayPanel #panel>
+              <ul style="list-style-type:none" (click)="panel.hide()">
+                  <li (click)="gotoDetalle(indOperacion.firma)">Firmar</li>
+                  <li (click)="gotoDetalle(indOperacion.anulacion)">Anular</li>
+                  <li (click)="openModal()" >Situacion de las firmas</li>
+              </ul>
+            </p-overlayPanel>
+        </p>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+
+<!-- The Modal -->
+<div #myModal class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <pst-situacion-firma></pst-situacion-firma>
+    </div>
+</div>

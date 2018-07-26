@@ -1,0 +1,56 @@
+<pst-header [subtitle]="subtitle"></pst-header>
+
+<form [formGroup]="form" (ngSubmit)="aplicarFiltros()" novalidate>
+  <div class="ui-g info-box">
+    <div class="ui-g-12">
+      <div class="ui-g-6">
+        <h4>Importe desde:</h4>
+        <input id="input" type="text" size="30" pInputText>
+      </div>
+      <div class="ui-g-6">
+        <h4>Importe hasta:</h4>
+        <input id="input" type="text" size="30" pInputText>
+      </div>
+    </div>
+  
+    <div class="ui-g-12">
+      <div class="ui-g-6">
+        <h4>Fecha desde:</h4>
+        <p-calendar [showIcon]="true" icon="icon-calendar"></p-calendar>
+      </div>
+      <div class="ui-g-6">
+        <h4>Fecha hasta:</h4>
+        <p-calendar [showIcon]="true" icon="icon-calendar"></p-calendar>
+      </div>
+    </div>
+  
+    <div class="ui-g-12">
+      <button type="submit" class="nwe-btn nwe-btn-grey left">Aplicar filtros</button>
+    </div>
+  </div>
+</form>
+
+<table class="table" cellspacing=0 *ngIf="cuentas$ | async as cuentas">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Cuenta</th>
+      <th>Titular</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cuenta of cuentas; let i=index">
+      <td>
+        <input type="radio" id="{{i}}" [checked]="cuenta===selectedCuenta" (change)="selectedCuenta=cuenta">
+        <label for="{{i}}"><span></span></label>
+      </td>
+      <td>{{cuenta.numCuentaIBAN}}</td>
+      <td>{{cuenta.titularCuenta}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<footer>
+  <button type="button" class="nwe-btn nwe-btn-grey left" (click)="cancelar()">Cancelar</button>
+  <button type="button" class="nwe-btn nwe-btn-red right" [class.disabled]="!selectedCuenta" (click)="continuar()">Continuar</button>
+</footer>

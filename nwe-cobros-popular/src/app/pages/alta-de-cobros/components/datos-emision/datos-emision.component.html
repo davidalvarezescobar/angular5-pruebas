@@ -1,0 +1,62 @@
+<div [formGroup]="parent">
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <h4>Datos de la emisión</h4>
+        </div>
+        <div class="ui-g-12">
+            <label for="contrato_cuenta">Contrato / Cuenta<span class="obligatorio">*</span></label><br>
+            <input type="text" [value]="contrato_cuenta" [attr.disabled]="true" class="grande">
+            <a (click)="this.busqueda.emit()"><i class="fa fa-search"></i></a>
+        </div>
+        <div class="ui-g-3">
+            <label for="concepto">Concepto de la emisión<span class="obligatorio">*</span></label><br>
+            <input type="text" formControlName="concepto">
+        </div>
+        <div class="ui-g-3">
+            <label for="referencia">Referencia de la emisión<span class="obligatorio">*</span></label><br>
+            <input type="text" formControlName="referencia">
+        </div>
+        <div class="ui-g-3">
+            <label for="fechaEmision">Fecha de la emisión<span class="obligatorio">*</span></label><br>
+            <div class="centrado-vertical" style="height:36px">
+                <input type="radio" value="P" formControlName="tipFechaEmision">
+                <label>Periódica</label>
+                <input type="radio" value="U" formControlName="tipFechaEmision">
+                <label>Única emisión</label>
+            </div>
+        </div>
+        <div class="ui-g-3">
+            <div style="height:36px"></div>
+            <p-calendar formControlName="fechaEmision" [disabled]="this.parent.get('tipFechaEmision').value === 'P'" [showIcon]="true" icon="icon-calendar" dateFormat="dd-mm-yy" dataType="string"></p-calendar>
+        </div>
+    </div>
+
+    <div *ngIf="this.parent.get('tipFechaEmision').value === 'P'" class="ui-g" formGroupName="periodica">
+        <div class="ui-g-12">
+            <h4>Periódica</h4>
+        </div>
+        <div class="ui-g-3">
+            <label for="periodicidad">Periodicidad</label><br>
+            <p-dropdown [options]="optionsPeriodicidad" formControlName="periodicidad" [style]="{'width':'100%'}"></p-dropdown>
+        </div>
+        <div class="ui-g-3">
+            <label for="fechaDesde">Desde</label><br>
+            <p-calendar formControlName="fechaDesde" [showIcon]="true" icon="icon-calendar" dateFormat="dd-mm-yy" dataType="string"></p-calendar>
+        </div>
+        <div class="ui-g-3">
+            <label for="duracion">Duración</label><br>
+            <div class="centrado-vertical" style="height:36px">
+                <input type="radio" value="I" formControlName="duracion">
+                <label>Indefinida</label>
+                <input type="radio" value="F" formControlName="duracion">
+                <label>Entre fechas</label>
+            </div>
+        </div>
+        <div *ngIf="this.parent.get('periodica.duracion').value === 'F'" class="ui-g-3">
+            <label for="fechaHasta">Hasta</label><br>
+            <p-calendar formControlName="fechaHasta" [showIcon]="true" icon="icon-calendar" dateFormat="dd-mm-yy" dataType="string"></p-calendar>
+        </div>
+    </div>
+
+</div>

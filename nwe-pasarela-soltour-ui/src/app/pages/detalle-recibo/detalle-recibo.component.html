@@ -1,0 +1,67 @@
+<section id="detalle-recibo">
+
+  <pst-header [subtitle]="headerData"></pst-header>
+
+  <div class="ui-g info-box">
+    <div class="ui-g-12">
+      <div class="ui-g-5">
+        <span> <strong>Cuenta de cargo / abono</strong> </span>
+        <span> {{ detallePagoData?.cuenta}} </span>
+      </div>
+      <div class="ui-g-4">
+        <span> <strong>Titular de la cuenta</strong> </span>
+        <span> {{ detallePagoData?.titular }} </span>
+      </div>
+    </div>
+
+    <div class="ui-g-12">
+      <div class="ui-g-5">
+        <span> <strong>Emisor</strong> </span>
+        <span> {{ detallePagoData?.emisor }} </span>
+      </div>
+      <div class="ui-g-4">
+        <span> <strong>Email emisor</strong> </span>
+        <span> {{ detallePagoData?.emailEmisor }} </span>
+      </div>
+      <div class="ui-g-2">
+        <span> <strong>Número de factura</strong> </span>
+        <span> {{ detallePagoData?.numeroFactura }} </span>
+      </div>
+    </div>
+
+    <div class="ui-g-12">
+      <div class="ui-g-5">
+        <span> <strong>Importe</strong> </span>
+        <span> {{ detallePagoData?.importe + ' ' + detallePagoData?.moneda }} </span>
+      </div>
+      <div class="ui-g-4">
+        <span> <strong>Fecha de compra</strong> </span>
+        <span> {{ detallePagoData?.fechaFactura }} </span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!showFirmar && !returnOrdenes" class="ui-g-12">
+    <div class="ui-g-6 text-left">
+      <button class="nwe-btn nwe-btn-grey" type="button" name="button" (click)="cancelar()">Cancelar operación</button>
+    </div>
+    <div class="ui-g-6 text-right">
+      <button class="nwe-btn nwe-btn-grey" type="button" name="button" (click)="firmarLuego()">Firmar luego</button>
+      <button class="nwe-btn nwe-btn-red" type="button" name="button" (click)="firmarAhora()">Firmar ahora</button>
+    </div>
+  </div>
+  <div *ngIf="!showFirmar && returnOrdenes" class="ui-g-12">
+    <div class="ui-g-6 text-left">
+      <button class="nwe-btn nwe-btn-grey" type="button" name="button" (click)="cancelar()">Cancelar</button>
+    </div>
+    <div class="ui-g-6 text-right" [ngSwitch]="tipOperacion">
+      <button *ngSwitchCase="indOperacion.firma" class="nwe-btn nwe-btn-red" type="button" name="button" (click)="firmarAhora()">Firmar</button>
+      <button *ngSwitchCase="indOperacion.anulacion" class="nwe-btn nwe-btn-red" type="button" name="button" (click)="firmar()">Anular</button>
+    </div>
+  </div>
+
+  <div *ngIf="showFirmar" class="ui-g-12">
+    <pst-firma (canceled)="cancelar($event)" (signatureKey)="firmar($event)"></pst-firma>
+  </div>
+
+</section>

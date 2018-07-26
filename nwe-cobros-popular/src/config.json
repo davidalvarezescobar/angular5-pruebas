@@ -1,0 +1,45 @@
+{
+  "restApis": [
+    "/nwe-cmc-contract-api",
+    "/nwe-front-config-api"
+  ],
+  "xAlias": "EMPAGOSTO17",
+  "accountHolder": "Testing Titular",
+  "apiRestDomain": "https://nwe-gateway-api-san-nweb-emp-dev.appls.boaw.paas.gsnetcloud.corp",
+  "apiRestTealium": "https://tags.tiqcdn.com/utag/santander/bancaonlineempresas/dev/utag.js",
+  "datePickerLang": "es-es",
+  "versionApi": "/v1",
+  "cobrosEndpoint": {
+    "emissionList": "/charge/list_emission_charges",
+    "programatedList": "/charge/list_programed_charges",
+    "cobroDetail": "/charge/detail",
+    "emissionDetail": "/charge/emission_detail",
+    "validateDebtor": "/charge/debtor",
+    "accounts": "/charge/accounts/alias"
+  },
+  "app": {
+    "app_id": "Santander_V1.0",
+    "app_version": "0.3.1"
+  },
+  "document": "U7076616G",
+  "log": {
+    "level": "ERROR",
+    "url": "https://trace-eater-san-nweb-emp-dev.appls.boaw.paas.gsnetcloud.corp"
+  },
+  "mock": false,
+  "nweCobrosApi": "/nwe-cobros-agrup-api",
+  "nweCmcContractApi": "/nwe-cmc-contract-api",
+  "nweFrontConfigApi": "/nwe-front-config-api",
+  "nweConfigApi": "/nwe-front-config-api",
+  "tealiumEnviroment": "dev",
+  "accountTealium": "santander",
+  "profileTealium": "bancaonlineempresas",
+  "urlKeepAlive": "https://nwe-gateway.santander.pre.corp/scc/refresh",
+  "user": "EMPAGOSTO17",
+  "activeKeepAlive": false,
+  "otpProducts": [
+    { "cod": "PP", "otpOperation": "00001"}
+  ],
+  "portalCode": "002",
+  "showHistoric": false
+}

@@ -1,0 +1,9 @@
+<div *ngIf="(users$ | async) as users; else loading">
+    <app-user-list 
+        [users]="users"
+        (onCreateUser)="createUser($event)"
+        (onApproveAll)="approveAll()">
+    </app-user-list>
+</div>
+
+<ng-template #loading>Cargando...</ng-template>

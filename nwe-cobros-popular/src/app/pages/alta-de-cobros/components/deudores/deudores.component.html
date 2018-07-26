@@ -1,0 +1,57 @@
+<nwe-header-title [data]="configHeader"></nwe-header-title>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="greybox ui-g">
+        <div class="ui-g-12">
+            <h4>Deudor 1</h4>
+        </div>                
+            
+       <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="nombre">Nombre / razón social</label><span class="obligatorio">*</span><br>
+                <input type="text" formControlName="nombre">
+            </div>
+            <div class="ui-g-4">
+                <label for="referencia">Referencia</label><span class="obligatorio">*</span><br>
+                <input type="text" formControlName="referencia">
+            </div>
+        </div>
+         
+        
+        <div class="ui-g-4">
+            <label for="concepto">Concepto</label><span class="obligatorio">*</span><br>
+            <input type="text" formControlName="concepto">
+        </div>
+        <div class="ui-g-8">
+            <label for="contrato_iban">Cuenta</label><span class="obligatorio">*</span><br>
+            <label for="contrato_iban">{{form.value.codPais}}</label>
+            <input style="width: 40px" type="text" value="06">
+            <input style="width: 70px" type="text" formControlName="entidad" placeholder="Entidad" maxlength="4">
+            <input style="width: 70px" type="text" formControlName="sucursal" placeholder="Sucursal" maxlength="4">
+            <input style="width: 40px" type="text" formControlName="digito" placeholder="DC" maxlength="2">
+            <input style="width: 120px" type="text" formControlName="cuenta" placeholder="Nº. Cuenta" maxlength="10">
+        </div>
+            
+        <div class="ui-g-12">
+            <div class="ui-g-4 inputFormat euro-background" data-placeholder="EUR">
+                    <label for="importe">Importe<span class="obligatorio">*</span></label>
+                    <!-- <input type="text" formControlName="importe"
+                      (focus)="removeDots(form.value.importe)"
+                      (blur)="format(form.value.importe)"
+                      (keypress)="mask($event,form.value.importe)"> -->
+                    <input type="text" formControlName="importe">
+            </div>
+            <div class="ui-g-4">
+                <label for="codigoDevolucion">Código de devolución</label><span class="obligatorio">*</span><br>
+                <input type="text" formControlName="codigoDevolucion">
+                
+            </div>
+            <br>
+            <div class="ui-g-1 padding-top">
+                <span class="icon-info"></span>
+            </div>
+        </div>
+        <pre>{{form.get('importe').value | currency:'EUR':'code':'1.2'}}</pre>
+    </div>
+    <button type="button" class="nwe-btn nwe-btn-grey left" (click)="cancelar()">Cancelar</button>
+    <button type="submit" class="nwe-btn nwe-btn-red right">Aceptar</button>
+</form>

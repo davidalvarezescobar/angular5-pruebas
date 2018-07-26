@@ -1,0 +1,6 @@
+<div [hidden]="!loading">
+    <img class="preloader" src='assets/loader_santander.gif' alt="Loading logo santander" type="logo" title="Logo santander"/>
+</div>
+<div [hidden]="loading" id="root-container" class='root-container'>
+    <router-outlet></router-outlet>
+</div>
